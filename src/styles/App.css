@@ -1,0 +1,10 @@
+.App {
+  height: calc(100% - 60px);
+  width: calc(100% - 60px);
+  padding: 20px;
+
+  font-size: 1.5rem;
+
+  border: 3px solid black;
+  border-radius: 16px;
+}
