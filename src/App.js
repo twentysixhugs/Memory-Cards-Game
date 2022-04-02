@@ -1,6 +1,5 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
 
-import Difficulty from './components/Difficulty';
 import Result from './components/Result';
 import Rules from './components/Rules';
 import Scoreboard from './components/Scoreboard';
@@ -14,18 +13,19 @@ import './styles/App.css';
 export default function App() {
   const [cards, setCards] = useState([...getInitialCards()]);
 
-  useEffect(() => {
-    setCardsForDifficulty(difficulty);
-    setCards((cards) => shuffleArray([...cards]));
-  }, []);
-
   const [difficulty, setDifficulty] = useState(1);
+
+  const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
     if (difficulty !== 1) {
       setCardsForDifficulty(difficulty);
     }
   }, [difficulty]);
+
+  useEffect(() => {
+    setCardsForDifficulty(difficulty);
+  }, []);
 
   const [score, setScore] = useState(0);
 
@@ -38,7 +38,7 @@ export default function App() {
   const [highScore, setHighScore] = useState(0);
 
   function setCardsForDifficulty(difficulty) {
-    /* Shuffle the existing cards,
+    /* Shuffle the initial cards,
     get the ones without difficulty,
     get first N of them */
 
@@ -69,6 +69,7 @@ export default function App() {
   }
 
   function handleClickOnCard(cardId, e) {
+    if (isGameOver) return;
     /* Shuffle on click only if the card
     is not yet clicked */
     let isAlreadyClicked = cards.find(
@@ -77,7 +78,7 @@ export default function App() {
 
     if (isAlreadyClicked) {
       console.log('game over');
-      unmountCards();
+      setIsGameOver(true);
       setScore(0);
     } else {
       setScore(score + 1);
@@ -106,18 +107,14 @@ export default function App() {
     setDifficulty((difficulty) => difficulty + 1); // increase difficulty
   }
 
-  function mountCards() {
+  function resetCards() {
     setCards(() => [...getInitialCards()]);
   }
 
-  function unmountCards() {
-    setCards(() => []);
-  }
-
   function handlePlayAgain(e) {
-    mountCards();
+    setIsGameOver(false);
+    resetCards();
     setCardsForDifficulty(1);
-    setDifficulty(1);
   }
 
   return (
