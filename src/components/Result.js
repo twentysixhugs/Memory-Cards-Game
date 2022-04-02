@@ -1,8 +1,15 @@
-export default function Result({ score, highScore, onPlayAgain }) {
+export default function Result({
+  score,
+  highScore,
+  onPlayAgain,
+  isGameOver,
+  isWin,
+}) {
   return (
     <div className="c-result">
       <span className="c-result__text c-result--message">
-        {"Oops, you've already clicked that one"}
+        {isGameOver && "Oops, you've already clicked that one"}
+        {isWin && 'You are really attentive! Congratulations!'}
       </span>
       <span className="c-result__text c-result--score">
         Score: {score}
