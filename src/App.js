@@ -17,6 +17,8 @@ export default function App() {
 
   const [isGameOver, setIsGameOver] = useState(false);
 
+  const [isShowingRules, setIsShowingRules] = useState(true);
+
   useEffect(() => {
     if (difficulty !== 1) {
       setCardsForDifficulty(difficulty);
@@ -79,7 +81,6 @@ export default function App() {
     if (isAlreadyClicked) {
       console.log('game over');
       setIsGameOver(true);
-      setScore(0);
     } else {
       setScore(score + 1);
 
@@ -112,6 +113,7 @@ export default function App() {
   }
 
   function handlePlayAgain(e) {
+    setScore(0);
     setIsGameOver(false);
     resetCards();
     setCardsForDifficulty(1);
@@ -131,6 +133,9 @@ export default function App() {
           highScore={highScore}
           onPlayAgain={handlePlayAgain}
         />
+      )}
+      {isShowingRules && (
+        <Rules onButtonClick={() => setIsShowingRules(false)} />
       )}
     </div>
   );
