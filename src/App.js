@@ -125,7 +125,13 @@ export default function App() {
         <CardsWrapper cards={cards} onCardClick={handleClickOnCard} />
       </main>
       <Scoreboard score={score} highScore={highScore} />
-      <button onClick={handlePlayAgain}>Play again</button>
+      {isGameOver && (
+        <Result
+          score={score}
+          highScore={highScore}
+          onPlayAgain={handlePlayAgain}
+        />
+      )}
     </div>
   );
 }
