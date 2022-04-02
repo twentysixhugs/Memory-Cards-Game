@@ -16,6 +16,7 @@ export default function App() {
   const [difficulty, setDifficulty] = useState(1);
 
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isWin, setIsWin] = useState(false);
 
   const [isShowingRules, setIsShowingRules] = useState(true);
 
@@ -35,9 +36,34 @@ export default function App() {
     if (score > highScore) {
       setHighScore(score);
     }
+
+    if (shouldWin()) {
+      setIsWin(true);
+      return;
+    }
+
+    if (shouldIncreaseDifficulty()) {
+      increaseDifficulty();
+    }
   }, [score]);
 
   const [highScore, setHighScore] = useState(0);
+
+  function shouldIncreaseDifficulty() {
+    const cardsWithDifficulty = cards.filter((card) => card.difficulty);
+
+    const areAllCurrentCardsClicked =
+      cardsWithDifficulty.every((card) => card.isClicked) &&
+      cardsWithDifficulty.length > 0;
+
+    return areAllCurrentCardsClicked;
+  }
+
+  function shouldWin() {
+    const areAllCardsClicked = cards.every((card) => card.isClicked);
+
+    return areAllCardsClicked;
+  }
 
   function setCardsForDifficulty(difficulty) {
     /* Shuffle the initial cards,
@@ -83,23 +109,23 @@ export default function App() {
       setIsGameOver(true);
     } else {
       setScore(score + 1);
-
-      setCards((cards) => shuffleArray([...cards]));
-
-      /* Mark card as clicked */
-      setCards((cards) =>
-        cards.map((card) => {
-          if (card.id === cardId) {
-            return {
-              ...card,
-              isClicked: true,
-            };
-          }
-
-          return card;
-        }),
-      );
     }
+
+    setCards((cards) => shuffleArray([...cards]));
+
+    /* Mark card as clicked */
+    setCards((cards) =>
+      cards.map((card) => {
+        if (card.id === cardId) {
+          return {
+            ...card,
+            isClicked: true,
+          };
+        }
+
+        return card;
+      }),
+    );
   }
 
   function increaseDifficulty() {
@@ -115,6 +141,7 @@ export default function App() {
   function handlePlayAgain(e) {
     setScore(0);
     setIsGameOver(false);
+    setIsWin(false);
     resetCards();
     setCardsForDifficulty(1);
   }
@@ -127,11 +154,13 @@ export default function App() {
         <CardsWrapper cards={cards} onCardClick={handleClickOnCard} />
       </main>
       <Scoreboard score={score} highScore={highScore} />
-      {isGameOver && (
+      {(isGameOver || isWin) && (
         <Result
           score={score}
           highScore={highScore}
           onPlayAgain={handlePlayAgain}
+          isGameOver={isGameOver}
+          isWin={isWin}
         />
       )}
       {isShowingRules && (
