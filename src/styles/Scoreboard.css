@@ -1,0 +1,28 @@
+.c-scoreboard {
+  position: fixed;
+  z-index: 2;
+  min-width: 100%;
+  min-height: 120px;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+  order: 1;
+
+  font-size: 1.8rem;
+
+  background: rgb(241, 218, 182);
+}
+
+.score-wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+
+.c-scoreboard__score {
+  margin-right: 2rem;
+}
