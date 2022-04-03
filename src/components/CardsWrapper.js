@@ -11,7 +11,6 @@ export default function CardsWrapper({ cards, onCardClick }) {
             text={card.text}
             img={card.img}
             onClick={(e) => onCardClick(card.id, e)}
-            isClicked={card.isClicked}
           />
         ))}
     </div>
