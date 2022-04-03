@@ -1,7 +1,6 @@
 # Memory Game with Angry Birds characters
 ---
 ### [Live preview](https://twentysixhugs.github.io/Memory-Cards-Game)
----
 - Built with React
 ---
 
