@@ -1,4 +1,5 @@
 import Card from './Card';
+import '../styles/CardsWrapper.css';
 
 export default function CardsWrapper({ cards, onCardClick }) {
   return (

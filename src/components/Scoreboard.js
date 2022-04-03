@@ -1,3 +1,5 @@
+import '../styles/Scoreboard.css';
+
 export default function Scoreboard({ score, highScore }) {
   return (
     <aside className="c-scoreboard">

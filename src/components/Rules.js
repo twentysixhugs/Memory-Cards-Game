@@ -1,3 +1,5 @@
+import '../styles/Rules.css';
+
 export default function Rules({ onButtonClick }) {
   return (
     <div className="c-rules">

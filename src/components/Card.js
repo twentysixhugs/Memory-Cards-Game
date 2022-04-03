@@ -1,3 +1,5 @@
+import '../styles/Card.css';
+
 export default function Card({ onClick, text, img }) {
   return (
     <div className="c-card" onClick={onClick}>
