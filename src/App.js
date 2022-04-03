@@ -106,7 +106,7 @@ export default function App() {
     );
   }
 
-  function handleClickOnCard(cardId, e) {
+  function handleClickOnCard(cardId) {
     if (isGameOver) return;
     /* Shuffle on click only if the card
     is not yet clicked */
@@ -148,7 +148,7 @@ export default function App() {
     setCards(() => [...getInitialCards()]);
   }
 
-  function handlePlayAgain(e) {
+  function handlePlayAgain() {
     setScore(0);
     setIsGameOver(false);
     setIsWin(false);

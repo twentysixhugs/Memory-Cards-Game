@@ -1,4 +1,4 @@
-export default function Card({ onClick, isClicked, text, img }) {
+export default function Card({ onClick, text, img }) {
   return (
     <div className="c-card" onClick={onClick}>
       <img className="c-card__img" src={img} alt="Card image"></img>
