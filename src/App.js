@@ -4,6 +4,7 @@ import Result from './components/Result';
 import Rules from './components/Rules';
 import Scoreboard from './components/Scoreboard';
 import CardsWrapper from './components/CardsWrapper';
+import Footer from './components/Footer';
 
 import shuffleArray from './modules/shuffle';
 import getInitialCards from './modules/getInitialCards';
@@ -157,10 +158,13 @@ export default function App() {
   return (
     <div className="App">
       <main className="main">
-        <h1>Memory Card Game</h1>
-        <h2>Current difficulty: {difficulty}</h2>
+        <h1 className="main__heading">Memory Card Game</h1>
+        <h2 className="main__difficulty">
+          Current difficulty: {difficulty}
+        </h2>
         <CardsWrapper cards={cards} onCardClick={handleClickOnCard} />
       </main>
+      <Footer />
       <Scoreboard score={score} highScore={highScore} />
       {(isGameOver || isWin) && (
         <Result
@@ -172,7 +176,11 @@ export default function App() {
         />
       )}
       {isShowingRules && (
-        <Rules onButtonClick={() => setIsShowingRules(false)} />
+        <Rules
+          onButtonClick={() => {
+            setIsShowingRules(false);
+          }}
+        />
       )}
     </div>
   );
