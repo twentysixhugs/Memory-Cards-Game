@@ -1,0 +1,25 @@
+.c-card {
+  height: 145px;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  border-radius: 8px;
+  background: rgb(255, 245, 210);
+
+  animation: 0.5s appear forwards;
+  box-shadow: -2px 2px 5px #808080;
+}
+
+.c-card__img {
+  height: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+  .c-card {
+    height: 100px;
+  }
+}
