@@ -1,10 +1,10 @@
 .App {
   position: relative;
-  height: 100%;
+  min-height: 100vh;
 
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+
   align-items: center;
   gap: 20px;
 
@@ -12,9 +12,10 @@
 }
 
 .main {
-  width: 80%;
+  height: 100%;
+  width: 100%;
   margin-top: 100px;
-  padding: 2.5rem;
+  padding: 3rem 2.5rem 1rem 2.5rem;
   display: flex;
   flex-flow: column;
   order: 2;

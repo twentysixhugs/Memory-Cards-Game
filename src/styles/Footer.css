@@ -1,0 +1,32 @@
+.c-footer {
+  order: 3;
+  margin-top: auto;
+  height: 45px;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.c-footer__code-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c-footer__github-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.c-footer__link {
+  text-decoration: none;
+  color: rgb(105, 68, 0);
+}
+
+@media only screen and (max-width: 620px) {
+  .c-footer {
+    gap: 0.5rem;
+  }
+}
