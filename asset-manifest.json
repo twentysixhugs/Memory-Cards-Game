@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Memory-Cards-Game/static/css/main.6b1fb701.css",
+    "main.css": "/Memory-Cards-Game/static/css/main.941595a0.css",
     "main.js": "/Memory-Cards-Game/static/js/main.29623fbf.js",
     "static/media/Vader.png": "/Memory-Cards-Game/static/media/Vader.0bc3f04c9c14de5ae2c9.png",
     "static/media/The-blues.png": "/Memory-Cards-Game/static/media/The-blues.c84c56f3972a5ef73f7f.png",
@@ -18,11 +18,11 @@
     "static/media/Matilda.png": "/Memory-Cards-Game/static/media/Matilda.44a2b257816a6c1b23dd.png",
     "static/media/Red-but-girl.png": "/Memory-Cards-Game/static/media/Red-but-girl.11c1348769c35bc5429f.png",
     "index.html": "/Memory-Cards-Game/index.html",
-    "main.6b1fb701.css.map": "/Memory-Cards-Game/static/css/main.6b1fb701.css.map",
+    "main.941595a0.css.map": "/Memory-Cards-Game/static/css/main.941595a0.css.map",
     "main.29623fbf.js.map": "/Memory-Cards-Game/static/js/main.29623fbf.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b1fb701.css",
+    "static/css/main.941595a0.css",
     "static/js/main.29623fbf.js"
   ]
 }
