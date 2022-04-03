@@ -28,7 +28,7 @@ export default function Footer() {
             className="c-footer__link"
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/twentysixhugs"
+            href="https://github.com/twentysixhugs/memory-Cards-Game"
           >
             View code
           </a>
