@@ -25,7 +25,7 @@ export default function App() {
     }
   }, [isGameOver, isWin]);
 
-  const [isShowingRules, setIsShowingRules] = useState(true);
+  const [isShowingRules, setIsShowingRules] = useState(false);
 
   useEffect(() => {
     if (difficulty !== 1) {
@@ -49,6 +49,10 @@ export default function App() {
       increaseDifficulty();
     }
   }, [score]);
+
+  useEffect(() => {
+    setIsShowingRules(true);
+  }, []);
 
   const [highScore, setHighScore] = useState(0);
 
