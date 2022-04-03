@@ -1,6 +1,10 @@
-# Memory game with Angry Birds characters
+# Memory Ggame with Angry Birds characters
 ---
 ### [Live preview](twentysixhugs.github.io/Memory-Cards-Game)
+---
+- Built with React
+---
+
 
 ### Credits
 - Images are taken from https://www.nicepng.com
