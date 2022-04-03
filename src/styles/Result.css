@@ -59,3 +59,9 @@
   top: 4px;
   right: 2px;
 }
+
+@media only screen and (max-width: 620px) {
+  .c-result__text {
+    font-size: 1.3rem;
+  }
+}
