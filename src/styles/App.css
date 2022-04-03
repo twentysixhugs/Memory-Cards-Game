@@ -1,23 +1,42 @@
 .App {
-  height: calc(100% - 60px);
-  width: calc(100% - 60px);
-  padding: 20px;
+  position: relative;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 
   font-size: 1.5rem;
-
-  border: 3px solid black;
-  border-radius: 16px;
 }
 
-.cards-wrapper {
-  height: 100%;
+.main {
+  width: 80%;
+  margin-top: 100px;
+  padding: 2.5rem;
   display: flex;
-  gap: 1rem;
+  flex-flow: column;
+  order: 2;
 }
 
-.c-card {
-  flex: 1;
-  height: 300px;
-  border: 2px solid black;
-  border-radius: 4px;
+.main__heading {
+  font-size: 2.5rem;
+}
+
+.main__difficulty {
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+
+  font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .main__heading {
+    font-size: 1.5rem;
+  }
+
+  .main__difficulty {
+    font-size: 1.2rem;
+  }
 }
