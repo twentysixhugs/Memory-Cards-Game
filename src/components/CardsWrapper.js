@@ -9,6 +9,7 @@ export default function CardsWrapper({ cards, onCardClick }) {
           <Card
             key={card.id}
             text={card.text}
+            img={card.img}
             onClick={(e) => onCardClick(card.id, e)}
             isClicked={card.isClicked}
           />

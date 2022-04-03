@@ -1,7 +1,7 @@
-export default function Card({ onClick, isClicked, text }) {
+export default function Card({ onClick, isClicked, text, img }) {
   return (
     <div className="c-card" onClick={onClick}>
-      <img className="c-card__img" alt="Card image"></img>
+      <img className="c-card__img" src={img} alt="Card image"></img>
       <p className="c-card__text">{text}</p>
       {isClicked ? 'YES' : 'NO'}
     </div>
