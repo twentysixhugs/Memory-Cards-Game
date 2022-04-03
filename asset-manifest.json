@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Memory-Cards-Game/static/css/main.6b1fb701.css",
+    "main.js": "/Memory-Cards-Game/static/js/main.29623fbf.js",
+    "static/media/Vader.png": "/Memory-Cards-Game/static/media/Vader.0bc3f04c9c14de5ae2c9.png",
+    "static/media/The-blues.png": "/Memory-Cards-Game/static/media/The-blues.c84c56f3972a5ef73f7f.png",
+    "static/media/Chuck.png": "/Memory-Cards-Game/static/media/Chuck.7cd1c99bade6883baf3f.png",
+    "static/media/Stella.png": "/Memory-Cards-Game/static/media/Stella.6dedd38c16c04e4988ef.png",
+    "static/media/Ewok.png": "/Memory-Cards-Game/static/media/Ewok.0b38fe52cf0c5fa92e2e.png",
+    "static/media/Obi-wan.png": "/Memory-Cards-Game/static/media/Obi-wan.7858612dfb2e2d326587.png",
+    "static/media/Corporal.png": "/Memory-Cards-Game/static/media/Corporal.3f5cf48b4fe0808c3f26.png",
+    "static/media/Bubbles.png": "/Memory-Cards-Game/static/media/Bubbles.df318c1b86760503065e.png",
+    "static/media/Bomb.png": "/Memory-Cards-Game/static/media/Bomb.f0bfc382dc6f04b69e98.png",
+    "static/media/Terence.png": "/Memory-Cards-Game/static/media/Terence.bb5f2faa2d12f94f4440.png",
+    "static/media/Red.png": "/Memory-Cards-Game/static/media/Red.af32ed21d1cb17f861ab.png",
+    "static/media/Bald-eagle.png": "/Memory-Cards-Game/static/media/Bald-eagle.60af084d0e66a48b48a8.png",
+    "static/media/Hal.png": "/Memory-Cards-Game/static/media/Hal.47ac647900daeed2c14e.png",
+    "static/media/Matilda.png": "/Memory-Cards-Game/static/media/Matilda.44a2b257816a6c1b23dd.png",
+    "static/media/Red-but-girl.png": "/Memory-Cards-Game/static/media/Red-but-girl.11c1348769c35bc5429f.png",
+    "index.html": "/Memory-Cards-Game/index.html",
+    "main.6b1fb701.css.map": "/Memory-Cards-Game/static/css/main.6b1fb701.css.map",
+    "main.29623fbf.js.map": "/Memory-Cards-Game/static/js/main.29623fbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b1fb701.css",
+    "static/js/main.29623fbf.js"
+  ]
+}
