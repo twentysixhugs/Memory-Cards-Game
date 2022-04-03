@@ -18,6 +18,8 @@
   display: flex;
   flex-flow: column;
   order: 2;
+
+  user-select: none;
 }
 
 .main__heading {
