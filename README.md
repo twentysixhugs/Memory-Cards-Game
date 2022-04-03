@@ -1,4 +1,4 @@
-# Memory Ggame with Angry Birds characters
+# Memory Game with Angry Birds characters
 ---
 ### [Live preview](twentysixhugs.github.io/Memory-Cards-Game)
 ---
