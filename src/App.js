@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import Result from './components/Result';
 import Rules from './components/Rules';
@@ -18,6 +18,13 @@ export default function App() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
 
+  useEffect(() => {
+    if (!isGameOver && !isWin) {
+      resetCards();
+      setCardsForDifficulty(1);
+    }
+  }, [isGameOver, isWin]);
+
   const [isShowingRules, setIsShowingRules] = useState(true);
 
   useEffect(() => {
@@ -25,10 +32,6 @@ export default function App() {
       setCardsForDifficulty(difficulty);
     }
   }, [difficulty]);
-
-  useEffect(() => {
-    setCardsForDifficulty(difficulty);
-  }, []);
 
   const [score, setScore] = useState(0);
 
@@ -60,7 +63,8 @@ export default function App() {
   }
 
   function shouldWin() {
-    const areAllCardsClicked = cards.every((card) => card.isClicked);
+    const areAllCardsClicked =
+      cards.every((card) => card.isClicked) && cards.length > 1;
 
     return areAllCardsClicked;
   }
@@ -70,16 +74,18 @@ export default function App() {
     get the ones without difficulty,
     get first N of them */
 
+    const initialCards = getInitialCards();
+
     const chosenCards = shuffleArray(
-      getInitialCards().filter((card) => !card.difficulty),
+      initialCards.filter((card) => !card.difficulty),
     ).splice(0, difficulty * 5);
 
     /* Get the indexes in the original cards array 
-    which will be replaced with new cards */
+    which will be replaced with the new cards */
     const indexesInOriginalCards = [];
 
     chosenCards.forEach((chosenCard) => {
-      const chosenCardIndex = cards.findIndex(
+      const chosenCardIndex = initialCards.findIndex(
         (originalCard) => originalCard.id === chosenCard.id,
       );
       indexesInOriginalCards.push(chosenCardIndex);
@@ -142,8 +148,6 @@ export default function App() {
     setScore(0);
     setIsGameOver(false);
     setIsWin(false);
-    resetCards();
-    setCardsForDifficulty(1);
   }
 
   return (
